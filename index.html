@@ -109,7 +109,7 @@ sync:'Device linking',syncNote:'Linking another device by QR is optional and not
 let S={lang:'ar',theme:'auto',view:'chat',mode:'single',sel:[],cur:null,convs:[],projects:[],files:[],mem:[],keys:[],showArch:false,q:'',mq:'',mcat:'',tab:'live'};
 try{Object.assign(S,JSON.parse(localStorage.getItem('lan2')||'{}'))}catch(e){}
 S.kp=false;S.ke=null;S.menu=false;S.kmodel=S.kmodel||{};if(!Array.isArray(S.keys))S.keys=[];
-const SB_URL='https://xspyqmrkkhlmglswaxgv.supabase.co',SB_KEY='';/* paste the publishable key between the quotes once the app is hosted */
+const SB_URL='https://xspyqmrkkhlmglswaxgv.supabase.co',SB_KEY='sb_publishable_GDeCYHGb3zPaHsUkXDOQOQ_khWrTu48';/* paste the publishable key between the quotes once the app is hosted */
 const API=SB_KEY?SB_URL+'/functions/v1':'';
 let SES=null,MODELS={};
 try{SES=JSON.parse(localStorage.getItem('lan_ses')||'null')}catch(e){}
