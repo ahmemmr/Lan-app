@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lan</title>
+<meta name="theme-color" content="#7A56D6">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Lan">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Newsreader:wght@400;500&family=Noto+Naskh+Arabic:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF9FC;--sb:#F2F0F7;--sf:#FFFFFF;--sf2:#EEEBF5;--ink:#26212F;--mut:#7B7488;--ln:#E3DFEC;--pr:#7A56D6;--on:#FFFFFF;--soft:#E9E2F8;--er:#B0435F;--sh:0 2px 14px rgba(40,25,80,.07);--se:"Newsreader","Noto Naskh Arabic",Georgia,serif;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1D1A25;--sb:#17141E;--sf:#27232F;--sf2:#2F2A39;--ink:#EEEAF6;--mut:#A39BB5;--ln:#37314A;--pr:#A98BF5;--on:#150E24;--soft:#32295A;--er:#E58AA8;--sh:0 2px 14px rgba(0,0,0,.3);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1D1A25;--sb:#17141E;--sf:#27232F;--sf2:#2F2A39;--ink:#EEEAF6;--mut:#A39BB5;--ln:#37314A;--pr:#A98BF5;--on:#150E24;--soft:#32295A;--er:#E58AA8;--sh:0 2px 14px rgba(0,0,0,.3);color-scheme:dark}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 15px/1.75 "IBM Plex Sans Arabic",system-ui,sans-serif}
+button,input,textarea,select{font:inherit;color:inherit}button{cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--pr);outline-offset:2px}
+svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+#app{display:grid;grid-template-columns:272px 1fr;height:100%}
+.sb{background:var(--sb);border-inline-end:1px solid var(--ln);display:flex;flex-direction:column;padding:14px 12px;gap:3px;min-height:0}
+.logo{display:flex;align-items:center;gap:10px;font:500 28px/1 var(--se);padding:6px 8px 14px}.logo i{width:26px;height:26px;border-radius:9px 9px 9px 3px;background:var(--pr)}.logo span{flex:1}
+.ni{display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:12px;width:100%;text-align:start}
+.ni:hover{background:var(--sf2)}.ni[aria-current=true]{background:var(--sf2);font-weight:500}.ni.nw{background:var(--soft);color:var(--pr);font-weight:500;margin-bottom:6px}
+.rc{font-size:12px;color:var(--mut);padding:14px 12px 4px}
+.rec{flex:1;overflow:auto;display:flex;flex-direction:column;gap:1px;min-height:0}
+.ci{display:flex;align-items:center;border-radius:10px;padding-inline-start:4px}.ci:hover,.ci[aria-current=true]{background:var(--sf2)}
+.ci .t{flex:1;text-align:start;padding:6px 8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px}
+.acts{display:flex}.acts button{padding:4px 6px;color:var(--mut);font-size:12px}
+@media(hover:hover){.acts{display:none}.ci:hover .acts,.ci:focus-within .acts{display:flex}}
+.sb .inp{padding:7px 12px;font-size:14px;margin:4px 0}
+main{min-width:0;height:100%;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:10px;padding:10px 16px;min-height:56px}.top h2{flex:1;margin:0;font-size:15px;font-weight:500;text-align:center;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.ib{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;flex:none}.ib:hover{background:var(--sf2)}
+.pgtop{display:none}.ib.mb{display:none}
+.pg{flex:1;overflow:auto;padding:24px 24px 48px}.w{width:min(740px,100%);margin-inline:auto}
+.hd{display:flex;align-items:center;gap:12px;margin-bottom:20px}.hd h1{flex:1;margin:0;font:500 34px/1.3 var(--se)}
+.btn{background:var(--pr);color:var(--on);padding:8px 18px;border-radius:12px;font-weight:500;white-space:nowrap}
+.btn.g{background:var(--sf2);color:var(--ink)}.btn.d{background:none;color:var(--er);padding:8px 12px}
+.inp{width:100%;background:var(--sf);border:1px solid var(--ln);border-radius:12px;padding:10px 14px}.inp:focus{border-color:var(--pr);outline:0}
+.mut{color:var(--mut);font-size:13px}.row{display:flex;align-items:center;gap:10px}
+.li{display:flex;align-items:center;gap:10px;padding:14px 2px;border-bottom:1px solid var(--ln)}
+.empty{text-align:center;color:var(--mut);padding:56px 16px}
+.chip{padding:4px 13px;border-radius:999px;border:1px solid var(--ln);color:var(--mut);background:var(--sf);font-size:14px}.chip[aria-pressed=true]{border-color:var(--pr);background:var(--soft);color:var(--pr)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+/* chat */
+.conv{flex:1;min-height:0;display:flex;flex-direction:column}
+.hero{text-align:center;padding:0 20px 22px}.hero i{display:block;width:40px;height:40px;border-radius:14px 14px 14px 4px;background:var(--pr);margin:0 auto 18px}.hero h1{margin:0;font:400 38px/1.3 var(--se)}
+.conv:not(.empty) .hero{display:none}.conv.empty .hero{margin:auto 0;padding-bottom:6vh}.conv.empty .msgs{display:none}
+.msgs{flex:1;overflow:auto;padding:8px 20px}.msgs .w{display:flex;flex-direction:column;gap:22px}
+.um{align-self:flex-start;max-width:88%;background:var(--sf2);padding:10px 18px;border-radius:18px;white-space:pre-wrap}
+.ai{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}.ai>div{border:1px solid var(--ln);background:var(--sf);border-radius:16px;padding:14px 16px}.ai b{font-weight:500}
+.er{color:var(--mut);font-size:14px;margin:4px 0 10px}
+.ctl{width:min(740px,100%);margin-inline:auto;padding:0 16px 16px}
+.cmp{background:var(--sf);border:1px solid var(--ln);border-radius:24px;padding:12px 14px 10px;box-shadow:var(--sh)}
+.cmp textarea{width:100%;border:0;background:none;resize:none;outline:0;padding:4px 4px 8px;max-height:160px;display:block}
+.cf{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.cf .sd{margin-inline-start:auto}
+.seg{display:flex;background:var(--sf2);border-radius:999px;padding:2px}.seg button{padding:2px 12px;border-radius:999px;color:var(--mut);font-size:14px}.seg button[aria-pressed=true]{background:var(--sf);color:var(--ink);box-shadow:var(--sh)}
+.send{width:38px;height:38px;border-radius:12px;background:var(--pr);color:var(--on);display:grid;place-items:center}
+.msel{width:auto;max-width:170px;padding:3px 10px;font-size:13px}
+/* settings, modal */
+.st{display:flex;align-items:center;gap:14px;padding:18px 2px;border-bottom:1px solid var(--ln)}.st>div:first-child{flex:1}
+.ov{position:fixed;inset:0;background:rgba(20,12,36,.5);display:flex;align-items:center;justify-content:center;padding:16px;z-index:20}
+.md{background:var(--sf);border-radius:20px;padding:22px;width:min(480px,100%);max-height:90%;overflow:auto;display:flex;flex-direction:column;gap:12px}.md h3{margin:0;font:500 22px var(--se)}.md label{display:block;font-size:13px;color:var(--mut);margin-bottom:2px}
+.kf{display:flex;flex-direction:column;gap:8px}
+.toast{position:fixed;inset-inline:16px;bottom:28px;margin:auto;width:fit-content;max-width:90%;background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:12px;z-index:30}
+.scrim{display:none}
+@media(max-width:899px){#app{grid-template-columns:1fr}
+.sb{display:none;position:fixed;inset-block:0;inset-inline-start:0;width:min(310px,86%);z-index:15;box-shadow:0 0 50px rgba(15,8,30,.35)}.sb.open{display:flex}
+.scrim.open{display:block;position:fixed;inset:0;background:rgba(20,12,36,.4);z-index:14}
+.ib.mb{display:grid}.pgtop{display:flex}.pg{padding:16px 16px 40px}.hd h1{font-size:28px}.hero h1{font-size:32px}}
+@media(prefers-reduced-motion:no-preference){.md{animation:up .2s ease}@keyframes up{from{transform:translateY(8px);opacity:0}}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const I={chat:'<path d="M4 5h16v11H9l-5 4z"/>',projects:'<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',files:'<path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5"/>',memory:'<path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/>',settings:'<circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>',menu:'<path d="M4 7h16M4 12h16M4 17h16"/>',plus:'<path d="M12 5v14M5 12h14"/>',up:'<path d="M12 19V5M6 11l6-6 6 6"/>'};
+const T={
+ar:{nav_chat:'المحادثات',nav_projects:'المشاريع',nav_files:'الملفات',nav_memory:'الذاكرة',nav_settings:'الإعدادات',hello:'بماذا تفكر اليوم؟',recent:'الأخيرة',menu:'القائمة',
+newChat:'محادثة جديدة',search:'بحث',single:'نموذج واحد',multi:'عدة نماذج',auto:'تلقائي',autoNote:'الوضع التلقائي لم يُفعّل بعد.',
+ph:'اكتب رسالتك…',send:'إرسال',archived:'المؤرشفة',rename:'إعادة تسمية',del:'حذف',arch:'أرشفة',unarch:'استعادة',noChats:'لا توجد محادثات بعد.',
+noSend:'لم يُرسل أي طلب: الاتصال بالمزودين يحتاج خادمًا، وهذه نسخة واجهة فقط.',noKeyYet:'أضف مفتاح API أولًا لتختاره هنا.',autoNone:'لا يوجد مفتاح ليختار Lan منه.',
+add:'إضافة',edit:'تعديل',save:'حفظ',cancel:'إلغاء',name:'الاسم',desc:'الوصف',text:'النص',cat:'التصنيف',all:'الكل',
+projects:'مشروع جديد',noProj:'أنشئ مشروعًا ليجمع محادثاتك وملفاتك وملاحظاتك.',notes:'ملاحظات وسياق',
+upload:'رفع ملفات',noFiles:'لم تُرفع ملفات بعد.',fileNote:'يُحفظ هنا اسم الملف وحجمه فقط. حفظ المحتوى والمعاينة يحتاجان الخادم.',
+addMem:'إضافة عنصر',noMem:'لا توجد عناصر ذاكرة بعد.',live:'الذاكرة الحيّة',imp:'بيانات مستوردة',impNote:'الاستيراد من تطبيقات الذكاء الاصطناعي لم يُفعَّل بعد، وستبقى البيانات المستوردة هنا منفصلة عن الذاكرة الحيّة.',
+lang:'اللغة',theme:'المظهر',auto2:'حسب الجهاز',light:'فاتح',dark:'داكن',
+keys:'مفاتيح API',keysDesc:'أضف مفاتيحك بأسماء تختارها، وتظهر الأسماء في المحادثة.',addKey:'إضافة مفتاح',editKey:'تعديل',keyName:'اسم المفتاح',keyVal:'مفتاح API',keepKey:'اتركه فارغًا للإبقاء على المفتاح الحالي',
+keyHint:'يُرسل المفتاح إلى الخادم مباشرة ولا يُحفظ في المتصفح.',keyNone:'لا توجد مفاتيح بعد.',pending:'بانتظار الخادم',needName:'اكتب اسمًا للمفتاح.',needKey:'أدخل مفتاح API.',
+srvOff:'الخادم غير مُعدّ بعد: حُفظ الاسم فقط على هذا الجهاز، ولم يُحفظ المفتاح ولم يُرسل.',keyFail:'تعذّر الحفظ. تحقق من الخادم وحاول مرة أخرى.',
+sync:'ربط الأجهزة',syncNote:'ربط جهاز آخر عبر QR اختياري ولم يُفعَّل بعد. بياناتك الآن على هذا الجهاز فقط.',delConfirm:'هل تريد الحذف نهائيًا؟',ok:'حسنًا',e_models:'تعذّر جلب النماذج',thinking:'جارٍ الرد…',e_cost_not_approved:'لم توافق على التكلفة بعد.',e_daily_limit_reached:'وصلت للحد اليومي للاستخدام.',e_provider_error:'ردّ المزود بخطأ',e_network:'تعذّر الاتصال بالخادم.',e_server_error:'حدث خطأ في الخادم.',e_unauthorized:'تعذّرت المصادقة، أعد تحميل الصفحة.',e_nomodel:'اختر نموذجًا أولًا.',e_provider_unknown:'لم يُحدّد مزود هذا المفتاح.',costTitle:'الموافقة على التكلفة',costMsg:'تُرسل الطلبات إلى المزود بمفتاحك وتُحاسب على حسابك لديه، وتختلف التكلفة بين النماذج. هل توافق؟',agree:'أوافق',costRow:'موافقة التكلفة',costDesc:'لا يُرسل أي طلب مدفوع قبل موافقتك.',provQ:'من أي مزود هذا المفتاح؟',install:'تثبيت التطبيق',installDesc:'ثبّت Lan على لابتوب أو جوال أو آيباد ليعمل كتطبيق مستقل.',instGuide:'• iPhone وiPad: افتح الرابط في Safari ثم زر المشاركة ثم «إضافة إلى الشاشة الرئيسية».\n• Android: قائمة Chrome ثم «تثبيت التطبيق».\n• ويندوز وماك (Chrome أو Edge): أيقونة التثبيت في شريط العنوان.\n• ماك (Safari): ملف ثم «إضافة إلى Dock».\nالتثبيت الكامل يعمل بعد نشر التطبيق على رابطك الخاص، ولا يعمل داخل معاينة هذه الصفحة.'},
+en:{nav_chat:'Chats',nav_projects:'Projects',nav_files:'Files',nav_memory:'Memory',nav_settings:'Settings',hello:'What’s on your mind?',recent:'Recent',menu:'Menu',
+newChat:'New chat',search:'Search',single:'Single AI',multi:'Multi AI',auto:'Auto AI',autoNote:'Auto mode isn’t enabled yet.',
+ph:'Write your message…',send:'Send',archived:'Archived',rename:'Rename',del:'Delete',arch:'Archive',unarch:'Restore',noChats:'No chats yet.',
+noSend:'No request was sent: provider access needs a server, and this build is the interface only.',noKeyYet:'Add an API key first to choose it here.',autoNone:'No key for Lan to choose from.',
+add:'Add',edit:'Edit',save:'Save',cancel:'Cancel',name:'Name',desc:'Description',text:'Text',cat:'Category',all:'All',
+projects:'New project',noProj:'Create a project to gather its chats, files, and notes.',notes:'Notes and context',
+upload:'Upload files',noFiles:'No files uploaded yet.',fileNote:'Only the file name and size are stored here. Saving content and previews need the server.',
+addMem:'Add item',noMem:'No memory items yet.',live:'Live memory',imp:'Imported data',impNote:'Importing from other AI apps isn’t enabled yet. Imported data will stay separate from live memory.',
+lang:'Language',theme:'Appearance',auto2:'Match device',light:'Light',dark:'Dark',
+keys:'API keys',keysDesc:'Add your keys with names you choose. The names show up in the chat.',addKey:'Add key',editKey:'Edit',keyName:'Key name',keyVal:'API key',keepKey:'Leave empty to keep the current key',
+keyHint:'The key goes straight to the server and is never stored in the browser.',keyNone:'No keys yet.',pending:'Waiting for server',needName:'Enter a name for the key.',needKey:'Enter an API key.',
+srvOff:'The server isn’t set up yet: only the name was saved on this device. The key was neither saved nor sent.',keyFail:'Couldn’t save. Check the server and try again.',
+sync:'Device linking',syncNote:'Linking another device by QR is optional and not enabled yet. Your data is on this device only.',delConfirm:'Delete permanently?',ok:'OK',e_models:'Couldn’t load models',thinking:'Replying…',e_cost_not_approved:'You haven’t approved the cost yet.',e_daily_limit_reached:'Daily usage limit reached.',e_provider_error:'The provider returned an error',e_network:'Couldn’t reach the server.',e_server_error:'A server error occurred.',e_unauthorized:'Authentication failed. Reload the page.',e_nomodel:'Choose a model first.',e_provider_unknown:'This key has no provider set.',costTitle:'Cost approval',costMsg:'Requests go to the provider with your key and are billed to your account there. Cost varies by model. Do you agree?',agree:'I agree',costRow:'Cost approval',costDesc:'No paid request is sent before you approve.',provQ:'Which provider is this key from?',install:'Install the app',installDesc:'Install Lan on a laptop, phone, or iPad so it runs as its own app.',instGuide:'• iPhone and iPad: open the link in Safari, tap Share, then “Add to Home Screen”.\n• Android: Chrome menu, then “Install app”.\n• Windows and Mac (Chrome or Edge): the install icon in the address bar.\n• Mac (Safari): File, then “Add to Dock”.\nFull installation works once the app is hosted on your own link, not inside this preview page.'}};
+let S={lang:'ar',theme:'auto',view:'chat',mode:'single',sel:[],cur:null,convs:[],projects:[],files:[],mem:[],keys:[],showArch:false,q:'',mq:'',mcat:'',tab:'live'};
+try{Object.assign(S,JSON.parse(localStorage.getItem('lan2')||'{}'))}catch(e){}
+S.kp=false;S.ke=null;S.menu=false;S.kmodel=S.kmodel||{};if(!Array.isArray(S.keys))S.keys=[];
+const SB_URL='https://xspyqmrkkhlmglswaxgv.supabase.co',SB_KEY='';/* paste the publishable key between the quotes once the app is hosted */
+const API=SB_KEY?SB_URL+'/functions/v1':'';
+let SES=null,MODELS={};
+try{SES=JSON.parse(localStorage.getItem('lan_ses')||'null')}catch(e){}
+function q(s){return esc(s).replace(/'/g,'&#39;')}
+async function tok(){
+ const now=Date.now()/1000;if(SES&&SES.exp>now+60)return SES.at;
+ let j;const h={apikey:SB_KEY,'Content-Type':'application/json'};
+ if(SES){const r=await fetch(SB_URL+'/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:h,body:JSON.stringify({refresh_token:SES.rt})});if(!r.ok)throw 0;j=await r.json()}
+ else{j=await(await fetch(SB_URL+'/auth/v1/signup',{method:'POST',headers:h,body:'{}'})).json()}
+ if(!j.access_token)throw 0;SES={at:j.access_token,rt:j.refresh_token,exp:j.expires_at||now+3000};
+ try{localStorage.setItem('lan_ses',JSON.stringify(SES))}catch(e){}return SES.at}
+async function fx(fn,method,body){
+ try{const r=await fetch(API+'/'+fn,{method,headers:{Authorization:'Bearer '+await tok(),apikey:SB_KEY,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});
+ const j=await r.json().catch(()=>({}));return r.ok?j:{error:j.error||'server_error',message:j.message}}catch(e){return{error:'network'}}}
+async function rest(path,opt={}){try{const r=await fetch(SB_URL+'/rest/v1/'+path,{...opt,headers:{Authorization:'Bearer '+await tok(),apikey:SB_KEY,'Content-Type':'application/json',...(opt.headers||{})}});return r.ok?await r.json().catch(()=>({})):null}catch(e){return null}}
+async function setApproved(v){const r=await rest('user_settings?on_conflict=user_id',{method:'POST',headers:{Prefer:'resolution=merge-duplicates,return=minimal'},body:JSON.stringify({cost_approved:v})});if(r){S.approved=v;render()}else toast(t('keyFail'))}
+async function boot(){
+ S.convs.forEach(c=>c.msgs.forEach(m=>(m.cards||[]).forEach(k=>{if(k&&k.s==='load'){k.s='err';k.e=t('e_network')}})));
+ if(!API)return;
+ const k=await fx('keys','GET');if(k.keys)S.keys=k.keys.map(x=>({id:x.id,name:x.name,provider:x.provider,l4:x.last4}));
+ const s=await rest('user_settings?select=cost_approved');S.approved=!!(s&&s[0]&&s[0].cost_approved);render()}
+async function loadModels(id){MODELS[id]={loading:1};const j=await fx('chat','POST',{action:'models',key_id:id});
+ MODELS[id]=j.models?{list:j.models}:{err:1};if(j.models&&!j.models.includes(S.kmodel[id]))S.kmodel[id]=j.models[0];render()}
+function msels(){return S.sel.map(id=>{const m=MODELS[id];
+ if(m&&m.list)return `<select class='inp msel' data-a='mdl' data-id='${id}'><optgroup label='${q(kname(id))}'>${m.list.map(x=>`<option${S.kmodel[id]===x?' selected':''}>${esc(x)}</option>`).join('')}</optgroup></select>`;
+ return m&&m.err?`<span class='mut'>${esc(kname(id))}: ${t('e_models')}</span>`:m?`<span class='mut'>…</span>`:''}).join('')}
+function pickProv(id){const o=document.createElement('div');o.className='ov';
+ o.innerHTML=`<div class='md'><h3>${t('provQ')}</h3><div class='chips'>${[['openai','OpenAI'],['gemini','Google'],['anthropic','Anthropic'],['deepseek','DeepSeek']].map(p=>`<button class='chip' data-p='${p[0]}'>${p[1]}</button>`).join('')}</div></div>`;
+ o.onclick=async e=>{const p=e.target.dataset.p;if(!p)return;o.remove();const d=await keyReq('PATCH',{id,name:kname(id),provider:p});if(d){S.keys.find(x=>x.id===id).provider=p;render()}};document.body.appendChild(o)}
+async function ksave(){
+ const n=document.getElementById('kn').value.trim(),k=document.getElementById('kk').value.trim(),e=S.keys.find(x=>x.id===S.ke);
+ if(!n)return toast(t('needName'));if(!e&&!k)return toast(t('needKey'));
+ if(API){const d=await keyReq(k?'PUT':'PATCH',{id:e&&e.id,name:n,key:k||undefined});if(!d)return;
+  upsert({id:d.id,name:n,provider:d.provider,l4:d.last4});S.ke=null;render();if(!d.provider)pickProv(d.id);return}
+ upsert({id:e?e.id:uid(),name:n,l4:e&&e.l4});if(k)toast(t('srvOff'));S.ke=null;render()}
+const msgA=m=>`<div class='ai'>${m.cards.map(k=>{if(typeof k==='string')k={k,s:'err',n:kname(k),e:t('noSend')};
+ return `<div><b>${esc(k.n||'Lan')}${k.m?` <span class='mut'>${esc(k.m)}</span>`:''}</b>${k.s==='load'?`<p class='mut'>${t('thinking')}</p>`:k.s==='ok'?`<div style='white-space:pre-wrap'>${esc(k.t)}</div>`:`<p class='er'>${esc(k.e)}</p>${k.k==='none'?`<button class='btn g' data-a='kpan'>${t('keys')}</button>`:''}`}</div>`}).join('')}</div>`;
+function toBottom(){const m=document.getElementById('msgs');if(m)m.scrollTop=m.scrollHeight}
+async function send(txt){
+ const el=document.getElementById('inp')||{value:''},x=txt||el.value.trim();if(!x)return;
+ if(S.mode==='auto')return toast(t('autoNote'));
+ let c=cc();if(!c){c={id:uid(),title:x.slice(0,40),msgs:[],arch:false};S.convs.unshift(c);S.cur=c.id}
+ c.mode=S.mode;c.sel=[...S.sel];
+ const tg=S.mode==='single'?S.sel.slice(0,1):S.sel;
+ if(!tg.length){c.msgs.push({r:'u',x},{r:'a',cards:[{k:'none',s:'err',e:t('noKeyYet')}]});render();toBottom();return}
+ if(!API){c.msgs.push({r:'u',x},{r:'a',cards:tg.map(k=>({k,n:kname(k),s:'err',e:t('noSend')}))});render();toBottom();return}
+ if(!S.approved){modal(t('costTitle'),[],()=>setApproved(true).then(()=>S.approved&&send(x)),t('costMsg'),t('agree'));return}
+ const turn=crypto.randomUUID(),cards=tg.map(k=>({k,n:kname(k),s:'load'}));
+ c.msgs.push({r:'u',x},{r:'a',cards});render();toBottom();
+ const run=async(cd,first)=>{const mdl=S.kmodel[cd.k];
+  if(!mdl){cd.s='err';cd.e=t('e_nomodel');return}
+  const j=await fx('chat','POST',{key_id:cd.k,model:mdl,message:x,conversation_id:c.dbId,mode:S.mode,turn_id:turn,save_user:first});
+  if(j.conversation_id)c.dbId=j.conversation_id;
+  if(!j.error&&j.text!==undefined){cd.s='ok';cd.t=j.text;cd.m=mdl}
+  else{cd.s='err';cd.e=(t('e_'+j.error)!=='e_'+j.error?t('e_'+j.error):t('e_server_error'))+(j.message?': '+j.message:'')}
+  render();toBottom()};
+ await run(cards[0],true);await Promise.all(cards.slice(1).map(cd=>run(cd,false)))}
+const save=()=>{try{localStorage.setItem('lan2',JSON.stringify(S))}catch(e){}};
+const t=k=>T[S.lang][k]||k;
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const uid=()=>Math.random().toString(36).slice(2,10);
+const ico=n=>`<svg viewBox="0 0 24 24">${I[n]}</svg>`;
+const NAV=['chat','projects','files','memory'];
+const cc=()=>S.convs.find(c=>c.id===S.cur);
+const kname=id=>(S.keys.find(k=>k.id===id)||{}).name||'';
+const defSel=()=>S.keys[0]?[S.keys[0].id]:[];
+function applyLang(){const h=document.documentElement;h.lang=S.lang;h.dir=S.lang==='ar'?'rtl':'ltr';if(S.theme==='auto')h.removeAttribute('data-theme');else h.dataset.theme=S.theme}
+function sidebar(){
+ const list=S.convs.filter(x=>!!x.arch===S.showArch&&(!S.q||x.title.toLowerCase().includes(S.q.toLowerCase())));
+ return `<div class="scrim${S.menu?' open':''}" data-a="menu"></div><aside class="sb${S.menu?' open':''}" aria-label="${t('menu')}">
+ <div class="logo"><i></i><span>Lan</span><button class="ib mb" data-a="menu" aria-label="${t('cancel')}">✕</button></div>
+ <button class="ni nw" data-a="newc">${ico('plus')}${t('newChat')}</button>
+ ${NAV.map(n=>`<button class="ni" data-a="nav" data-v="${n}" aria-current="${S.view===n}">${ico(n)}${t('nav_'+n)}</button>`).join('')}
+ <div class="rc">${t('recent')}</div><input class="inp" data-a="q" placeholder="${t('search')}" value="${esc(S.q)}">
+ <div class="rec">${list.length?list.map(x=>`<div class="ci" aria-current="${x.id===S.cur&&S.view==='chat'}"><button class="t" data-a="open" data-id="${x.id}">${esc(x.title)}</button><span class="acts"><button data-a="ren" data-id="${x.id}" title="${t('rename')}">✎</button><button data-a="arc" data-id="${x.id}" title="${x.arch?t('unarch'):t('arch')}">${x.arch?'↺':'▣'}</button><button data-a="delc" data-id="${x.id}" title="${t('del')}">✕</button></span></div>`).join(''):`<p class="mut" style="padding:4px 12px">${t('noChats')}</p>`}</div>
+ <button class="chip" data-a="tarch" aria-pressed="${S.showArch}" style="align-self:flex-start;margin:6px 8px">${t('archived')}</button>
+ <button class="ni" data-a="nav" data-v="settings" aria-current="${S.view==='settings'}">${ico('settings')}${t('nav_settings')}</button></aside>`;
+}
+function render(){
+ applyLang();S.sel=S.sel.filter(id=>S.keys.some(k=>k.id===id));
+ if(API)S.sel.forEach(id=>{if(!MODELS[id])loadModels(id)});
+ const v=({chat:vChat,projects:vProj,files:vFiles,memory:vMem,settings:vSet})[S.view]();
+ document.getElementById('app').innerHTML=`${sidebar()}<main>${v}</main>${kpanel()}`;
+ save();
+}
+const mbtn=`<button class="ib mb" data-a="menu" aria-label="${'☰'}">${ico('menu')}</button>`;
+function vChat(){
+ const c=cc(),empty=!c||!c.msgs.length;
+ const chips=S.keys.length?S.keys.map(k=>`<button class="chip" data-a="prov" data-id="${k.id}" aria-pressed="${S.sel.includes(k.id)}">${esc(k.name)}</button>`).join(''):'';
+ const msgs=c?c.msgs.map(m=>m.r==='u'?`<div class="um">${esc(m.x)}</div>`:msgA(m)).join(''):'';
+ return `<div class="top">${mbtn}<h2>${esc(c?c.title:'')}</h2><button class="ib" data-a="newc" aria-label="${t('newChat')}">${ico('plus')}</button></div>
+ <div class="conv${empty?' empty':''}"><div class="hero"><i></i><h1>${t('hello')}</h1></div><div class="msgs" id="msgs"><div class="w">${msgs}</div></div>
+ <div class="ctl"><div class="cmp"><textarea id="inp" rows="1" placeholder="${t('ph')}"></textarea>
+ <div class="cf"><div class="seg">${['single','multi','auto'].map(m=>`<button data-a="mode" data-id="${m}" aria-pressed="${S.mode===m}">${t(m)}</button>`).join('')}</div>
+ ${S.mode==='auto'?`<span class="mut">${t('autoNote')}</span>`:`<div class="chips">${chips}${msels()}</div>`}<button class="send sd" data-a="send" aria-label="${t('send')}">${ico('up')}</button></div></div></div></div>`;
+}
+const hd=(h,b)=>`<div class="hd"><h1>${h}</h1>${b||''}</div>`;
+const pt=`<div class="top pgtop">${mbtn}</div>`;
+function vProj(){return `${pt}<div class="pg"><div class="w">${hd(t('nav_projects'),`<button class="btn" data-a="addp">${t('projects')}</button>`)}
+ ${S.projects.length?S.projects.map(p=>`<div class="li"><div style="flex:1;min-width:0"><b>${esc(p.name)}</b><div class="mut">${esc(p.desc)}</div><div style="white-space:pre-wrap">${esc(p.notes)}</div></div><button class="btn g" data-a="edp" data-id="${p.id}">${t('edit')}</button><button class="btn d" data-a="delp" data-id="${p.id}">${t('del')}</button></div>`).join(''):`<div class="empty">${t('noProj')}</div>`}</div></div>`}
+function vFiles(){const f=S.files.filter(x=>!S.mq||x.n.toLowerCase().includes(S.mq.toLowerCase()));
+ return `${pt}<div class="pg"><div class="w">${hd(t('nav_files'),`<label class="btn">${t('upload')}<input type="file" multiple data-a="up" hidden></label>`)}
+ <p class="mut">${t('fileNote')}</p><input class="inp" data-a="fq" placeholder="${t('search')}" value="${esc(S.mq)}">
+ ${f.length?f.map(x=>`<div class="li"><div style="flex:1;min-width:0"><b style="word-break:break-all">${esc(x.n)}</b><div class="mut"><bdi>${(x.s/1024).toFixed(1)} KB</bdi></div></div><button class="btn d" data-a="delf" data-id="${x.id}">${t('del')}</button></div>`).join(''):`<div class="empty">${t('noFiles')}</div>`}</div></div>`}
+function vMem(){const cats=[...new Set(S.mem.map(m=>m.cat).filter(Boolean))];
+ const m=S.mem.filter(x=>(!S.mq||(x.x+x.cat).toLowerCase().includes(S.mq.toLowerCase()))&&(!S.mcat||x.cat===S.mcat));
+ return `${pt}<div class="pg"><div class="w">${hd(t('nav_memory'),S.tab==='live'?`<button class="btn" data-a="addm">${t('addMem')}</button>`:'')}
+ <div class="chips" style="margin-bottom:16px"><button class="chip" data-a="tab" data-id="live" aria-pressed="${S.tab==='live'}">${t('live')}</button><button class="chip" data-a="tab" data-id="imp" aria-pressed="${S.tab==='imp'}">${t('imp')}</button></div>
+ ${S.tab==='imp'?`<div class="empty">${t('impNote')}</div>`:`<div class="row"><input class="inp" data-a="mqi" placeholder="${t('search')}" value="${esc(S.mq)}"><select class="inp" data-a="mc" style="width:auto"><option value="">${t('all')}</option>${cats.map(c=>`<option ${c===S.mcat?'selected':''}>${esc(c)}</option>`).join('')}</select></div>
+ ${m.length?m.map(x=>`<div class="li"><div style="flex:1;min-width:0"><div style="white-space:pre-wrap">${esc(x.x)}</div>${x.cat?`<span class="mut">${esc(x.cat)}</span>`:''}</div><button class="btn g" data-a="edm" data-id="${x.id}">${t('edit')}</button><button class="btn d" data-a="delm" data-id="${x.id}">${t('del')}</button></div>`).join(''):`<div class="empty">${t('noMem')}</div>`}`}</div></div>`}
+function vSet(){const o=(k,id,l,cur)=>`<button class="chip" data-a="${k}" data-id="${id}" aria-pressed="${cur===id}">${l}</button>`;
+ return `${pt}<div class="pg"><div class="w">${hd(t('nav_settings'))}
+ <div class="st"><div><b>${t('lang')}</b></div><div class="chips">${o('lg','ar','العربية',S.lang)}${o('lg','en','English',S.lang)}</div></div>
+ <div class="st"><div><b>${t('theme')}</b></div><div class="chips">${o('th','auto',t('auto2'),S.theme)}${o('th','light',t('light'),S.theme)}${o('th','dark',t('dark'),S.theme)}</div></div>
+ <div class="st"><div><b>${t('keys')}</b><div class="mut">${t('keysDesc')}</div></div><button class="btn" data-a="kpan">${t('keys')} (${S.keys.length})</button></div>
+ <div class="st"><div><b>${t('costRow')}</b><div class="mut">${t('costDesc')}</div></div>${API?`<button class="chip" data-a="cost" aria-pressed="${!!S.approved}">${t('agree')}</button>`:''}</div>
+ <div class="st"><div><b>${t('install')}</b><div class="mut">${t('installDesc')}</div></div><button class="btn" data-a="inst">${t('install')}</button></div>
+ <div class="st"><div><b>${t('sync')}</b><div class="mut">${t('syncNote')}</div></div></div></div></div>`}
+function kpanel(){if(!S.kp)return '';const e=S.ke&&S.keys.find(k=>k.id===S.ke);
+ return `<div class="ov" data-a="kclose"><div class="md" role="dialog" aria-modal="true"><div class="row"><h3 style="flex:1">${t('keys')}</h3><button class="ib" data-a="kclose" aria-label="${t('cancel')}">✕</button></div><p class="mut" style="margin:0">${t('keyHint')}</p>
+ <div class="kf"><input class="inp" id="kn" placeholder="${t('keyName')}" value="${esc(e?e.name:'')}"><input class="inp" id="kk" type="password" autocomplete="off" dir="ltr" placeholder="${e?t('keepKey'):t('keyVal')}"><div class="row"><button class="btn" data-a="ksave">${e?t('save'):t('add')}</button>${e?`<button class="btn g" data-a="kcancel">${t('cancel')}</button>`:''}</div></div>
+ ${S.keys.length?S.keys.map(k=>`<div class="li"><div style="flex:1;min-width:0"><b>${esc(k.name)}</b><div class="mut"><bdi>${k.l4?'•••• '+esc(k.l4):t('pending')}</bdi></div></div><button class="btn g" data-a="kedit" data-id="${k.id}">${t('editKey')}</button><button class="btn d" data-a="kdel" data-id="${k.id}">${t('del')}</button></div>`).join(''):`<p class="mut">${t('keyNone')}</p>`}</div></div>`}
+function modal(title,fields,ok,msg,lab){
+ const o=document.createElement('div');o.className='ov';
+ o.innerHTML=`<div class="md" role="dialog" aria-modal="true"><h3>${esc(title)}</h3>${msg?`<p style="margin:0;white-space:pre-line">${esc(msg)}</p>`:''}${fields.map((f,i)=>`<div><label>${esc(f.l)}</label>${f.m?`<textarea class="inp" rows="4" data-i="${i}">${esc(f.v||'')}</textarea>`:`<input class="inp" data-i="${i}" value="${esc(f.v||'')}">`}</div>`).join('')}<div class="row" style="justify-content:flex-end"><button class="btn g" data-x="0">${t('cancel')}</button><button class="btn" data-x="1">${lab||t('save')}</button></div></div>`;
+ o.addEventListener('click',e=>{const x=e.target.dataset.x;if(e.target===o||x==='0')o.remove();else if(x==='1'){const v=[...o.querySelectorAll('[data-i]')].map(i=>i.value.trim());o.remove();ok(v)}});
+ document.body.appendChild(o);(o.querySelector('[data-i]')||o.querySelector('[data-x="1"]')).focus();
+}
+const confirmDel=cb=>modal(t('del'),[],cb,t('delConfirm'),t('del'));
+function toast(m){const o=document.createElement('div');o.className='toast';o.setAttribute('role','status');o.textContent=m;document.body.appendChild(o);setTimeout(()=>o.remove(),5000)}
+async function keyReq(method,body){if(!API)return null;const j=await fx('keys',method,body);if(j.error){toast(t('e_'+j.error)!=='e_'+j.error?t('e_'+j.error):t('keyFail'));return false}return j}
+const upsert=o=>{const i=S.keys.findIndex(x=>x.id===o.id);if(i<0)S.keys.push(o);else S.keys[i]=o};
+async function ksaveOld(){
+ const n=document.getElementById('kn').value.trim(),k=document.getElementById('kk').value.trim(),e=S.keys.find(x=>x.id===S.ke);
+ if(!n)return toast(t('needName'));if(!e&&!k)return toast(t('needKey'));
+ const id=e?e.id:uid();
+ if(API){const d=await keyReq(k?'PUT':'PATCH',{id,name:n,key:k||undefined});if(!d)return;upsert({id,name:n,l4:d.last4||(e&&e.l4)})}
+ else{upsert({id,name:n,l4:e&&e.l4});if(k)toast(t('srvOff'))}
+ S.ke=null;render();
+}
+function sendOld(){
+ const el=document.getElementById('inp');const x=el.value.trim();if(!x)return;
+ let c=cc();if(!c){c={id:uid(),title:x.slice(0,40),msgs:[],arch:false};S.convs.unshift(c);S.cur=c.id}
+ c.mode=S.mode;c.sel=[...S.sel];
+ let tg=S.mode==='auto'?['auto']:(S.mode==='single'?S.sel.slice(0,1):S.sel);if(!tg.length)tg=['none'];
+ const names={};tg.forEach(id=>names[id]=kname(id));
+ c.msgs.push({r:'u',x},{r:'a',cards:tg,names});
+ render();const m=document.getElementById('msgs');if(m)m.scrollTop=m.scrollHeight;
+}
+document.addEventListener('click',e=>{
+ const b=e.target.closest('[data-a]');if(!b||['INPUT','SELECT','TEXTAREA'].includes(b.tagName))return;
+ const a=b.dataset.a,id=b.dataset.id;
+ if((a==='kclose'||a==='menu')&&b.classList.contains('scrim')===false&&b.classList.contains('ov')&&e.target!==b)return;
+ const A={
+ menu:()=>{S.menu=!S.menu;render()},
+ nav:()=>{S.view=b.dataset.v;S.menu=false;render()},
+ newc:()=>{S.cur=null;S.mode='single';S.sel=defSel();S.menu=false;S.view='chat';render()},
+ open:()=>{const c=S.convs.find(x=>x.id===id);S.cur=id;S.mode=c.mode||'single';S.sel=c.sel||defSel();S.menu=false;S.view='chat';render()},
+ tarch:()=>{S.showArch=!S.showArch;render()},
+ mode:()=>{S.mode=id;if(id==='single')S.sel=S.sel.slice(0,1);render()},
+ prov:()=>{if(S.mode==='single')S.sel=[id];else S.sel=S.sel.includes(id)?S.sel.filter(p=>p!==id):[...S.sel,id];render()},
+ send,
+ ren:()=>{const c=S.convs.find(x=>x.id===id);modal(t('rename'),[{l:t('name'),v:c.title}],v=>{if(v[0]){c.title=v[0];render()}})},
+ arc:()=>{const c=S.convs.find(x=>x.id===id);c.arch=!c.arch;if(S.cur===id)S.cur=null;render()},
+ delc:()=>confirmDel(()=>{S.convs=S.convs.filter(x=>x.id!==id);if(S.cur===id)S.cur=null;render()}),
+ addp:()=>modal(t('projects'),[{l:t('name')},{l:t('desc')},{l:t('notes'),m:1}],v=>{if(v[0]){S.projects.unshift({id:uid(),name:v[0],desc:v[1],notes:v[2]});render()}}),
+ edp:()=>{const p=S.projects.find(x=>x.id===id);modal(t('edit'),[{l:t('name'),v:p.name},{l:t('desc'),v:p.desc},{l:t('notes'),v:p.notes,m:1}],v=>{if(v[0]){p.name=v[0];p.desc=v[1];p.notes=v[2];render()}})},
+ delp:()=>confirmDel(()=>{S.projects=S.projects.filter(x=>x.id!==id);render()}),
+ delf:()=>confirmDel(()=>{S.files=S.files.filter(x=>x.id!==id);render()}),
+ addm:()=>modal(t('addMem'),[{l:t('text'),m:1},{l:t('cat')}],v=>{if(v[0]){S.mem.unshift({id:uid(),x:v[0],cat:v[1]});render()}}),
+ edm:()=>{const m=S.mem.find(x=>x.id===id);modal(t('edit'),[{l:t('text'),v:m.x,m:1},{l:t('cat'),v:m.cat}],v=>{if(v[0]){m.x=v[0];m.cat=v[1];render()}})},
+ delm:()=>confirmDel(()=>{S.mem=S.mem.filter(x=>x.id!==id);render()}),
+ tab:()=>{S.tab=id;render()},
+ lg:()=>{S.lang=id;render()},
+ th:()=>{S.theme=id;render()},
+ cost:()=>setApproved(!S.approved),
+ inst:()=>{if(DP){DP.prompt();DP=null}else modal(t('install'),[],()=>{},t('instGuide'),t('ok'))},
+ kpan:()=>{S.kp=true;S.ke=null;render()},
+ kclose:()=>{S.kp=false;S.ke=null;render()},
+ kedit:()=>{S.ke=id;render()},
+ kcancel:()=>{S.ke=null;render()},
+ ksave,
+ kdel:()=>confirmDel(async()=>{if(API&&!await keyReq('DELETE',{id}))return;S.keys=S.keys.filter(x=>x.id!==id);S.sel=S.sel.filter(x=>x!==id);render()})};
+ if(A[a])A[a]();
+});
+document.addEventListener('input',e=>{
+ const a=e.target.dataset.a,v=e.target.value;
+ const keep=()=>{const p=e.target.selectionStart;render();const n=document.querySelector(`[data-a="${a}"]`);n.focus();try{n.setSelectionRange(p,p)}catch(_){}};
+ if(a==='q'){S.q=v;keep()}else if(a==='fq'||a==='mqi'){S.mq=v;keep()}
+});
+document.addEventListener('change',e=>{
+ const a=e.target.dataset.a;
+ if(a==='mc'){S.mcat=e.target.value;render()}
+ if(a==='mdl'){S.kmodel[e.target.dataset.id]=e.target.value;save()}
+ if(a==='up'){[...e.target.files].forEach(f=>S.files.unshift({id:uid(),n:f.name,s:f.size,t:f.type}));render()}
+});
+document.addEventListener('keydown',e=>{if(e.target.id==='inp'&&e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();send()}});
+let DP=null;addEventListener('beforeinstallprompt',e=>{e.preventDefault();DP=e});addEventListener('appinstalled',()=>{DP=null});
+try{if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(()=>{})}catch(e){}
+if(!S.sel.length)S.sel=defSel();boot();
+render();
+</script>
+</body>
+</html>
